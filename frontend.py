@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 import asyncio
 from scraperai import scrape_url, extract_text_by_query, smart_extract
-
+#flask
 app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
