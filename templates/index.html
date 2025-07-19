@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Web Tools</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            margin-bottom: 1rem;
+        }
+
+        input,
+        textarea,
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 0.5rem 0;
+        }
+
+        .result-box {
+            white-space: pre-wrap;
+            background-color: #fff;
+            padding: 1rem;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🌐 Smart Web Extraction Tools</h1>
+    <form method="POST">
+        <label>Enter URL:</label>
+        <input type="text" name="url" required placeholder="https://en.wikipedia.org/wiki/Artificial_intelligence">
+
+        <label>Select Tool:</label>
+        <select name="tool" required>
+            <option value="scrape">📝 Scrape Page</option>
+            <option value="query">🔍 Search by Query</option>
+            <option value="smart">🤖 Smart Extract (LLM)</option>
+        </select>
+
+        <label>Enter Query (for 'Search by Query'):</label>
+        <input type="text" name="query" placeholder="e.g. machine learning">
+
+        <label>Enter Instruction (for 'Smart Extract'):</label>
+        <input type="text" name="instruction" placeholder="e.g. List applications of AI">
+
+        <button type="submit">Run Tool</button>
+    </form>
+
+    {% if result %}
+    <div class="result-box">
+        <h3>🔎 Output:</h3>
+        <p>{{ result }}</p>
+    </div>
+    {% endif %}
+</body>
+
+</html>
